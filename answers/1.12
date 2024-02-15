@@ -1,2 +1,2 @@
 docker run -d -p 5000:5000 --name python-container backend-image:td
-docker run -d -p 80:80 --name frontend-container front-image:latest
+docker run -d -p 80:80 --name frontend-container -e WS_BACK_URL=http://localhost:8080 front-image:latest
