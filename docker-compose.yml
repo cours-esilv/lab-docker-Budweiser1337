@@ -1,0 +1,19 @@
+version: '3'
+services:
+  my-service:
+    image: budweiser1337/backend-image:td
+    ports:
+      - "8080:8080"
+      - "5000:5000"
+    environment:
+      - CURRENT_ENVIRONMENT=World
+      - ADDITIONAL_ENV_VAR=development
+  my-front:
+    image: budweiser1337/front:latest
+    ports:
+      - "80:80"
+    environment:
+      - WS_BACK_URL=http://my-service:8080
+    volumes:
+      - volumes: /home/user/data:/app/data
+
