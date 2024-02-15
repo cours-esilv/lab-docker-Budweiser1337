@@ -1,1 +1,1 @@
-docker run -d -p 5000:5000 --name container -e CURRENT_ENVIRONMENT=World backend-image
+docker run -p 5000:5000 --name container -e environment=World -d backend-image:latest
